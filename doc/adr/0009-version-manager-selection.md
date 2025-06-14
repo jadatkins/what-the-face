@@ -1,6 +1,6 @@
 # 9. Runtime and Package Management Selection
 
-Date: 2025-06-13
+Date: 2025-06-13 (amended 2025-06-14)
 
 ## Status
 
@@ -15,7 +15,7 @@ We need to select a JavaScript runtime, version manager, and package manager for
 We will use:
 - **Node.js** as our JavaScript runtime
 - **Volta** as our Node.js version manager  
-- **Bun** as our package manager
+- **Yarn** as our package manager
 
 ### Alternatives Considered
 
@@ -31,26 +31,27 @@ We will use:
 
 **Package Manager:**
 - **npm** - Rejected due to slower installation performance
-- **yarn** - Rejected as Bun provides superior speed without compatibility trade-offs
+- **Bun** - Rejected to reduce tooling complexity and focus on established workflows
 - **pnpm** - Rejected due to symlink complexity that could cause CI/CD and cross-platform issues
 
 ### Key Factors
 
-Runtime consistency between development and production was critical for avoiding deployment issues. Automatic version switching and fast package installation were prioritized to minimize development overhead.
+Runtime consistency between development and production was critical for avoiding deployment issues. Automatic version switching and reliable CI/CD compatibility were prioritized to minimize development overhead.
 
 ## Consequences
 
 **What becomes easier:**
 - Consistent runtime environment from development to production
 - Zero-config team environment consistency via Volta
-- Significantly faster package installation with Bun (20-30x faster than npm)
+- Faster package installation with Yarn compared to npm
 - Automatic Node.js version switching per project
-- Seamless Vercel deployment with native Bun package manager support
+- Reliable CI/CD compatibility without symlink complexity
+- Seamless Vercel deployment with established tooling
 
 **What becomes more difficult:**
-- Learning multiple new tools (Volta + Bun) instead of established workflows
-- Smaller communities for troubleshooting compared to npm/yarn + nvm
+- Learning Volta instead of more common nvm workflow
+- Additional tool beyond standard npm
 
 **Risks:**
-- Volta and Bun are newer tools with smaller ecosystems
-- Fallback to established tools (nvm + npm/yarn) is straightforward if needed
+- Volta is newer with smaller ecosystem than nvm
+- Fallback to established tools (nvm + npm) is straightforward if needed
