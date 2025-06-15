@@ -1,4 +1,4 @@
-# 9. Runtime and Package Management Selection
+# 9. Runtime and Package Management
 
 Date: 2025-06-13 (amended 2025-06-14)
 

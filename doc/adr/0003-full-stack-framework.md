@@ -1,4 +1,4 @@
-# 3. Full-Stack Framework Selection
+# 3. Full-Stack Framework
 
 Date: 2025-06-07
 
