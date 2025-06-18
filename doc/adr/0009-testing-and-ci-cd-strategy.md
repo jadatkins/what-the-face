@@ -1,6 +1,6 @@
-# 8. Testing and CI/CD Strategy
+# 9. Testing and CI/CD Strategy
 
-Date: 2025-06-07
+Date: 2025-06-18
 
 ## Status
 
@@ -15,7 +15,7 @@ As a single-developer hobby project focused on learning TypeScript and modern we
 We will implement the following development toolchain:
 
 ### Testing
-- **Vitest** + **React Testing Library** for unit and component testing
+- **Bun's built-in test runner** + **React Testing Library** for unit and component testing
 - **Playwright** for potential future E2E testing (when needed)
 
 ### Code Quality
@@ -25,12 +25,13 @@ We will implement the following development toolchain:
 
 ### CI/CD
 - **GitHub Actions** for continuous integration
-- **Vercel Speed Insights** + **Sentry** for performance monitoring
+- **Sentry** for performance monitoring
 
 ### Alternatives Considered
 
 **Testing Frameworks:**
-- **Jest** - Rejected in favor of Vitest due to better Vite integration and faster performance
+- **Vitest** - Rejected in favor of Bun's built-in test runner for unified toolchain
+- **Jest** - Rejected due to additional configuration overhead
 - **Cypress** - Rejected for E2E in favor of Playwright's better TypeScript support
 
 **Code Quality Tools:**
@@ -41,9 +42,6 @@ We will implement the following development toolchain:
 - **Husky + lint-staged** - Rejected due to multiple dependencies and JavaScript-based configuration
 - **Simple Git Hooks** - Rejected due to manual setup requirements
 
-**CI/CD Alternatives:**
-- **No CI initially** - Rejected as good practices should be established early
-- **Vercel-only checks** - Insufficient for comprehensive testing strategy
 
 ### Key Decision Factors
 
@@ -51,16 +49,15 @@ Choices prioritized:
 1. **Minimal configuration**: Tools that work with sane defaults
 2. **Single-tool solutions**: Biome over ESLint+Prettier, Lefthook over Husky+lint-staged
 3. **Learning-friendly**: Strong TypeScript integration and helpful error messages
-4. **Integration**: Compatibility with React Router v7, Vite, and Vercel deployment
+4. **Integration**: Compatibility with React Router v7, Vite bundler, and Bun runtime
 
 ## Consequences
 
 **What becomes easier:**
 - Zero-config code quality enforcement with Biome's defaults
 - Consistent development environment across different machines with Lefthook
-- Fast test feedback with Vitest's integration with our Vite-based stack
+- Unified testing workflow with Bun's built-in test runner eliminating separate framework configuration
 - TypeScript learning with strict mode preventing bad habits
-- Performance insights with minimal setup via Vercel integration
 
 **What becomes more difficult:**
 - Less flexibility for highly customized linting rules compared to ESLint
