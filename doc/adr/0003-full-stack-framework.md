@@ -12,7 +12,7 @@ Having chosen React as our frontend framework, we need a full-stack framework th
 
 ## Decision
 
-We will use **React Router v7 in framework mode**.
+We will use **React Router v7 in framework mode** with **Vite** as the build tool.
 
 ### Alternatives Considered
 
@@ -22,9 +22,11 @@ We will use **React Router v7 in framework mode**.
 - **Blitz.js** - Rejected as it's less mainstream and has uncertain long-term support
 - **Astro** - Rejected as it's more suited for static/content sites rather than full-stack applications
 
-### Evolution of Decision
+### Notes
 
 Originally considered Remix, but followed the Remix team's official recommendation: "We now recommend starting all new projects with React Router v7." This represents the natural evolution of Remix's approach.
+
+Vite is used as the build tool to access React Router v7's full framework features including SSR, automatic code-splitting, route modules with loaders and actions, and optimized development experience.
 
 ## Consequences
 
