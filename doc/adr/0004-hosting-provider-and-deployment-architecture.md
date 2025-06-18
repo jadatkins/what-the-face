@@ -20,6 +20,8 @@ We will use:
 - **Docker containers** as our architecture
 - **Koyeb** as our hosting provider
 
+Koyeb's company HQ is in Paris (France) but we will use their Frankfurt (Germany) region.
+
 ### Deployment Architecture Decision
 
 **Docker containers** were chosen over serverless functions for:
@@ -52,16 +54,18 @@ Both offer excellent React framework support but don't align with our Docker con
 ## Consequences
 
 **What becomes easier:**
-- European data sovereignty and provider ownership
 - Perfect development/production environment consistency
-- Docker containerization learning and best practices
-- Provider portability for future migration needs
+- Learning transferable Docker skills
+- Provider portability
+- European data sovereignty and provider ownership
 
 **What becomes more difficult:**
-- Initial Docker setup and containerization learning curve
 - Container layers complicate local debugging and development workflow
 - Less React-specific optimization of static assets compared to Vercel or Netlify
 
 **Risks:**
-- Koyeb is newer with smaller ecosystem than established providers
 - Dependency on Koyeb's platform stability and pricing
+
+### Notes
+
+Koyeb is hosted on bare metal from several different providers and designed so that the bare metal providers have no access to data. This gives them redundancy and independence from any one provider.
