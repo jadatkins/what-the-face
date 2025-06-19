@@ -7,11 +7,14 @@ services:
       - "5173:5173"
     environment:
       - NODE_ENV=development
+      - DATABASE_URL=postgresql://postgres:password@db:5432/whattheface
     volumes:
       - .:/app
       - /app/node_modules
     working_dir: /app
     command: bun run dev
+    depends_on:
+      - db
     develop:
       watch:
         - action: sync
@@ -19,3 +22,17 @@ services:
           target: /app/app
         - action: rebuild
           path: package.json
+
+  db:
+    image: postgres:16.8
+    environment:
+      - POSTGRES_DB=whattheface
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
