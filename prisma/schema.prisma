@@ -13,3 +13,11 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Variable {
+  id    Int    @id @default(autoincrement())
+  key   String @unique
+  value String
+
+  @@map("variables")
+}
