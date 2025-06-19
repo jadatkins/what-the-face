@@ -8,10 +8,10 @@ async function main() {
   // Create the message variable
   await prisma.variable.upsert({
     where: { key: "message" },
-    update: { value: "world" },
+    update: { value: "PostgreSQL" },
     create: {
       key: "message",
-      value: "world",
+      value: "PostgreSQL",
     },
   });
 
