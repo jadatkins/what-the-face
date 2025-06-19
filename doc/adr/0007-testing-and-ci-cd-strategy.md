@@ -1,4 +1,4 @@
-# 9. Testing and CI/CD Strategy
+# 7. Testing and CI/CD Strategy
 
 Date: 2025-06-18
 

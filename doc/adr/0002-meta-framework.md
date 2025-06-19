@@ -1,4 +1,4 @@
-# 3. Full-Stack Framework
+# 2. Meta-Framework
 
 Date: 2025-06-07
 

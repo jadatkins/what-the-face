@@ -1,4 +1,4 @@
-# 4. Hosting Provider and Deployment Architecture
+# 3. Hosting Provider and Deployment Architecture
 
 Date: 2025-06-15
 
