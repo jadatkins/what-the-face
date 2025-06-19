@@ -1,4 +1,4 @@
-# 2. Core Language and Frontend Framework Selection
+# 2. Core Language and Frontend Framework
 
 Date: 2025-06-07
 

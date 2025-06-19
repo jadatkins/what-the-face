@@ -1,6 +1,6 @@
 # 6. UI Component Library
 
-Date: 2025-06-07
+Date: 2025-06-14
 
 ## Status
 
@@ -8,41 +8,37 @@ Accepted
 
 ## Context
 
-The application needs a UI component library that provides pre-built, accessible components to accelerate development while maintaining a modern, professional appearance. The choice should minimize configuration overhead and provide good TypeScript integration.
+The application needs a UI component library that provides pre-built, accessible components to accelerate development while maintaining a modern, professional appearance. The choice should balance rapid prototyping capabilities with learning opportunities for industry-standard technologies.
 
 ## Decision
 
-We will use **Mantine** as our UI component library.
+We will use **shadcn/ui** (built on **Tailwind CSS**) as our UI component library.
 
 ### Alternatives Considered
 
-- **Chakra UI** - Rejected due to larger bundle size and more setup complexity than needed
-- **shadcn/ui** - Rejected due to requiring more configuration and Tailwind CSS setup overhead  
-- **Material-UI (MUI)** - Rejected as it's more enterprise-focused and opinionated than needed for this project
+- **Mantine** - Rejected in favor of learning industry-standard Tailwind CSS patterns
+- **Chakra UI** - Rejected for similar reasons as Mantine and a larger bundle size
+- **Material-UI (MUI)** - Rejected due to heavy enterprise focus and complexity beyond project requirements
 
 ### Key Factors
 
-- **Ease of use**: Mantine provides "100+ customizable components" with minimal setup
-- **Modern styling**: Offers modern design patterns out of the box
-- **Developer experience**: More opinionated approach reduces decision fatigue
-- **Bundle size**: Lighter weight compared to some alternatives
-- **TypeScript support**: Excellent TypeScript integration
+- **Modern styling**: Components come ready-styled out of the box
+- **Learning opportunity**: Exposure to Tailwind CSS, widely adopted across the industry
+- **Flexibility**: Copy-paste approach enables deep customization when needed
+- **Bundle optimization**: Only includes components actually used in the project
 
 ## Consequences
 
 **What becomes easier:**
-- Rapid prototyping with pre-built, accessible components
-- Consistent design system without custom CSS
-- Modern styling and theming out of the box
-- Reduced time spent on component implementation
-- Built-in accessibility features
+- Learning industry-standard Tailwind CSS utility patterns
+- Deep customization of components through direct code access
+- Bundle optimization by including only used components
 
 **What becomes more difficult:**
-- Less flexibility for highly custom designs compared to utility-first approaches
-- Potential need to override Mantine styles for unique requirements
-- Learning Mantine-specific APIs and patterns
+- Slightly more complex initial setup compared to package-based libraries
+- Managing component updates manually rather than through package updates
+- Additional configuration file in repository (Tailwind config)
 
 **Risks:**
-- Dependency on Mantine's maintenance and future development
 - Potential bundle size growth with additional components
-- Migration complexity if switching to different UI library later
+- Potential inconsistency if components are modified without design system considerations
