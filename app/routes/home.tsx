@@ -3,7 +3,7 @@ import type { Route } from "./+types/home";
 
 const prisma = new PrismaClient();
 
-export function meta({}: Route.MetaArgs) {
+export function meta(_args: Route.MetaArgs) {
   return [
     { title: "What The Face" },
     { name: "description", content: "Hello from the database!" },
@@ -32,7 +32,7 @@ export async function loader() {
   } catch (error) {
     return {
       message: "error",
-      source: "code", 
+      source: "code",
       status: "failed",
       error: error instanceof Error ? error.message : "Unknown error",
     };
