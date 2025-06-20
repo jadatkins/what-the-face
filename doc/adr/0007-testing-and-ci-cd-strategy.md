@@ -15,7 +15,7 @@ As a single-developer hobby project focused on learning TypeScript and modern we
 We will implement the following development toolchain:
 
 ### Testing
-- **Bun's built-in test runner** + **React Testing Library** for unit and component testing
+- **Vitest** + **React Testing Library** for unit and component testing
 - **Playwright** for potential future E2E testing (when needed)
 
 ### Code Quality
@@ -30,8 +30,7 @@ We will implement the following development toolchain:
 ### Alternatives Considered
 
 **Testing Frameworks:**
-- **Vitest** - Rejected in favor of Bun's built-in test runner for unified toolchain
-- **Jest** - Rejected due to additional configuration overhead
+- **Jest** - Rejected in favor of Vitest due to better Vite integration and faster performance
 - **Cypress** - Rejected for E2E in favor of Playwright's better TypeScript support
 
 **Code Quality Tools:**
@@ -42,21 +41,20 @@ We will implement the following development toolchain:
 - **Husky + lint-staged** - Rejected due to multiple dependencies and JavaScript-based configuration
 - **Simple Git Hooks** - Rejected due to manual setup requirements
 
-
 ### Key Decision Factors
 
 Choices prioritized:
 1. **Minimal configuration**: Tools that work with sane defaults
 2. **Single-tool solutions**: Biome over ESLint+Prettier, Lefthook over Husky+lint-staged
 3. **Learning-friendly**: Strong TypeScript integration and helpful error messages
-4. **Integration**: Compatibility with React Router v7, Vite bundler, and Bun runtime
+4. **Integration**: Compatibility with React Router v7, Vite, and Docker deployment
 
 ## Consequences
 
 **What becomes easier:**
 - Zero-config code quality enforcement with Biome's defaults
 - Consistent development environment across different machines with Lefthook
-- Unified testing workflow with Bun's built-in test runner eliminating separate framework configuration
+- Fast test feedback with Vitest's integration with our Vite-based stack
 - TypeScript learning with strict mode preventing bad habits
 
 **What becomes more difficult:**

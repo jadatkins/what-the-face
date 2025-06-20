@@ -1,6 +1,6 @@
 # 4. Runtime and Package Management
 
-Date: 2025-06-18
+Date: 2025-06-13 (amended 2025-06-14)
 
 ## Status
 
@@ -12,44 +12,45 @@ We need to select a JavaScript runtime, version manager and package manager for 
 
 ## Decision
 
-We will use **Bun** as both our JavaScript runtime and package manager.
+We will use:
+- **Node.js** as our JavaScript runtime
+- **Volta** as our Node.js version manager  
+- **Yarn** as our package manager
 
 ### Alternatives Considered
 
-**Runtime + Package Manager:**
-- **Node.js + npm** - Rejected due to slower performance and separate tooling complexity
-- **Node.js + Yarn** - Rejected in favor of unified toolchain approach
-- **Node.js + pnpm** - Rejected in favor of unified toolchain approach
+**Runtime:**
+- **Bun runtime** - Rejected due to SSR compatibility issues with React Router v7 framework mode
 - **Deno** - Rejected as it requires different patterns and has smaller ecosystem
 
-**Version Management:**
-- Not needed with Bun as it includes built-in version management
-- **Volta** - Would be redundant with Bun's unified approach
-- **nvm/fnm** - Would be redundant with Bun's approach
+**Version Manager:**
+- **fnm** - Rejected as it requires manual version switching
+- **pnpm** - Rejected as it mixes version and package management concerns
+- **nvm** - Rejected due to slower performance and manual configuration requirements
+- **asdf** - Rejected as universal version management is overkill for Node.js-only project
+
+**Package Manager:**
+- **npm** - Rejected due to slower installation performance
+- **Bun** - Rejected to reduce tooling complexity and focus on established workflows
+- **pnpm** - Rejected due to symlink complexity that could cause CI/CD and cross-platform issues
 
 ### Key Factors
 
-- **Unified toolchain**: Single tool for runtime, package management, and TypeScript execution
-- **Performance**: Faster package installation and application startup
-- **Simplified development**: Built-in TypeScript support eliminates build steps
-- **Forward-thinking**: Learning experience with next-generation JavaScript runtime
-- **Reduced complexity**: Eliminates need for separate version and package managers
+Runtime consistency between development and production was critical for avoiding deployment issues. Automatic version switching and reliable CI/CD compatibility were prioritized to minimize development overhead.
 
 ## Consequences
 
 **What becomes easier:**
-- Zero-config TypeScript execution without build steps
-- Faster package installation compared to npm/yarn
-- Simplified toolchain with fewer moving parts
-- Consistent development and production environments via Docker
-- No need for separate version management tools
+- Consistent runtime environment from development to production
+- Zero-config team environment consistency via Volta
+- Faster package installation with Yarn compared to npm
+- Automatic Node.js version switching per project
+- Reliable CI/CD compatibility without symlink complexity
 
 **What becomes more difficult:**
-- Smaller ecosystem with potential package compatibility issues
-- Less community support and fewer Stack Overflow answers
-- Debugging tools and workflows less mature than Node.js
+- Learning Volta instead of more common nvm workflow
+- Additional tool beyond standard npm
 
 **Risks:**
-- Ecosystem compatibility gaps for some npm packages
-- Dependency on relatively new technology with smaller community
-- Potential migration complexity if switching back to Node.js becomes necessary
+- Volta is newer with smaller ecosystem than nvm
+- Fallback to established tools (nvm + npm) is straightforward if needed
