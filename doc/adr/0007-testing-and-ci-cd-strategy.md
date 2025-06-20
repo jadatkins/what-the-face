@@ -1,6 +1,6 @@
 # 7. Testing and CI/CD Strategy
 
-Date: 2025-06-18
+Date: 2025-06-18 (amended 2025-06-20)
 
 ## Status
 
@@ -21,7 +21,7 @@ We will implement the following development toolchain:
 ### Code Quality
 - **Biome** for both linting and formatting
 - **TypeScript strict mode** for enhanced type safety
-- **Lefthook** for git hook management
+- **Husky + git-format-staged** for git hook management
 
 ### CI/CD
 - **GitHub Actions** for continuous integration
@@ -38,31 +38,31 @@ We will implement the following development toolchain:
 - **dprint** - Rejected due to smaller community and less integration with VS Code
 
 **Git Hook Managers:**
-- **Husky + lint-staged** - Rejected due to multiple dependencies and JavaScript-based configuration
-- **Simple Git Hooks** - Rejected due to manual setup requirements
+- **Lefthook** - Rejected due to suboptimal handling of mixed staged/unstaged changes
+- **Husky + lint-staged** - Rejected due to multiple dependencies (~1500) and similar staging limitations
+- **pre-commit** - Rejected due to unnecessary complexity for single-project use
 
 ### Key Decision Factors
 
 Choices prioritized:
 1. **Minimal configuration**: Tools that work with sane defaults
-2. **Single-tool solutions**: Biome over ESLint+Prettier, Lefthook over Husky+lint-staged
-3. **Learning-friendly**: Strong TypeScript integration and helpful error messages
+2. **Single-tool solutions**: Biome over ESLint+Prettier
+3. **Workflow compatibility**: Support for partial staging (common when splitting commits logically)
 4. **Integration**: Compatibility with React Router v7, Vite, and Docker deployment
 
 ## Consequences
 
 **What becomes easier:**
 - Zero-config code quality enforcement with Biome's defaults
-- Consistent development environment across different machines with Lefthook
+- Precise control over what gets committed when using partial staging with git-format-staged
 - Fast test feedback with Vitest's integration with our Vite-based stack
 - TypeScript learning with strict mode preventing bad habits
 
 **What becomes more difficult:**
 - Less flexibility for highly customized linting rules compared to ESLint
-- Smaller community for Biome/Lefthook troubleshooting compared to traditional tools
-- Learning new tool-specific configurations instead of industry-standard ones
+- Smaller community for Biome troubleshooting compared to traditional tools
 
 **Risks:**
 - Biome is newer and may have fewer edge-case solutions than ESLint
-- Dependency on newer tools with potentially less stability
+- git-format-staged has smaller community than lint-staged for troubleshooting
 - Migration complexity if switching back to traditional toolchain later
