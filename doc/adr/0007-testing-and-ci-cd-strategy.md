@@ -1,6 +1,6 @@
 # 7. Testing and CI/CD Strategy
 
-Date: 2025-06-18
+Date: 2025-06-18 (amended 2025-06-20)
 
 ## Status
 
@@ -15,13 +15,13 @@ As a single-developer hobby project focused on learning TypeScript and modern we
 We will implement the following development toolchain:
 
 ### Testing
-- **Bun's built-in test runner** + **React Testing Library** for unit and component testing
+- **Vitest** + **React Testing Library** for unit and component testing
 - **Playwright** for potential future E2E testing (when needed)
 
 ### Code Quality
 - **Biome** for both linting and formatting
 - **TypeScript strict mode** for enhanced type safety
-- **Lefthook** for git hook management
+- **Husky + git-format-staged** for git hook management
 
 ### CI/CD
 - **GitHub Actions** for continuous integration
@@ -30,8 +30,7 @@ We will implement the following development toolchain:
 ### Alternatives Considered
 
 **Testing Frameworks:**
-- **Vitest** - Rejected in favor of Bun's built-in test runner for unified toolchain
-- **Jest** - Rejected due to additional configuration overhead
+- **Jest** - Rejected in favor of Vitest due to better Vite integration and faster performance
 - **Cypress** - Rejected for E2E in favor of Playwright's better TypeScript support
 
 **Code Quality Tools:**
@@ -39,32 +38,31 @@ We will implement the following development toolchain:
 - **dprint** - Rejected due to smaller community and less integration with VS Code
 
 **Git Hook Managers:**
-- **Husky + lint-staged** - Rejected due to multiple dependencies and JavaScript-based configuration
-- **Simple Git Hooks** - Rejected due to manual setup requirements
-
+- **Lefthook** - Rejected due to suboptimal handling of mixed staged/unstaged changes
+- **Husky + lint-staged** - Rejected due to multiple dependencies (~1500) and similar staging limitations
+- **pre-commit** - Rejected due to unnecessary complexity for single-project use
 
 ### Key Decision Factors
 
 Choices prioritized:
 1. **Minimal configuration**: Tools that work with sane defaults
-2. **Single-tool solutions**: Biome over ESLint+Prettier, Lefthook over Husky+lint-staged
-3. **Learning-friendly**: Strong TypeScript integration and helpful error messages
-4. **Integration**: Compatibility with React Router v7, Vite bundler, and Bun runtime
+2. **Single-tool solutions**: Biome over ESLint+Prettier
+3. **Workflow compatibility**: Support for partial staging (common when splitting commits logically)
+4. **Integration**: Compatibility with React Router v7, Vite, and Docker deployment
 
 ## Consequences
 
 **What becomes easier:**
 - Zero-config code quality enforcement with Biome's defaults
-- Consistent development environment across different machines with Lefthook
-- Unified testing workflow with Bun's built-in test runner eliminating separate framework configuration
+- Precise control over what gets committed when using partial staging with git-format-staged
+- Fast test feedback with Vitest's integration with our Vite-based stack
 - TypeScript learning with strict mode preventing bad habits
 
 **What becomes more difficult:**
 - Less flexibility for highly customized linting rules compared to ESLint
-- Smaller community for Biome/Lefthook troubleshooting compared to traditional tools
-- Learning new tool-specific configurations instead of industry-standard ones
+- Smaller community for Biome troubleshooting compared to traditional tools
 
 **Risks:**
 - Biome is newer and may have fewer edge-case solutions than ESLint
-- Dependency on newer tools with potentially less stability
+- git-format-staged has smaller community than lint-staged for troubleshooting
 - Migration complexity if switching back to traditional toolchain later
