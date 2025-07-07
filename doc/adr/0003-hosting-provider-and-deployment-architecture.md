@@ -26,9 +26,12 @@ Koyeb's company HQ is in Paris (France) but we will use their Frankfurt (Germany
 
 **Docker containers** were chosen over serverless functions for:
 - Perfect development/production environment parity for easier debugging
+- Simplified onboarding for new developers (single `docker compose up` command)
 - Provider portability and reduced vendor lock-in
 - Educational value in learning containerization skills
 - Compatibility with European hosting providers
+
+Docker containers will be used for both local development and production deployment to eliminate "works on my machine" issues and reduce the risk of production-only bugs.
 
 ### Hosting Provider Alternatives Considered for Docker Containers
 
