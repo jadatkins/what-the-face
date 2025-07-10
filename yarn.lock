@@ -2017,6 +2017,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"git-format-staged@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "git-format-staged@npm:3.1.1"
+  bin:
+    git-format-staged: git-format-staged
+  checksum: 10c0/f28a61edfd6643af13ce9beec85c5077d86d5e2bc49d0b49c35c48ca81783a7c8d9da97a862877ef443990d9dcfcdef378b4b5d7a188402fcae5b113f4b920ff
+  languageName: node
+  linkType: hard
+
 "glob@npm:^10.2.2":
   version: 10.4.5
   resolution: "glob@npm:10.4.5"
@@ -2116,6 +2125,15 @@ __metadata:
     agent-base: "npm:^7.1.2"
     debug: "npm:4"
   checksum: 10c0/f729219bc735edb621fa30e6e84e60ee5d00802b8247aac0d7b79b0bd6d4b3294737a337b93b86a0bd9e68099d031858a39260c976dc14cdbba238ba1f8779ac
+  languageName: node
+  linkType: hard
+
+"husky@npm:^9.1.7":
+  version: 9.1.7
+  resolution: "husky@npm:9.1.7"
+  bin:
+    husky: bin.js
+  checksum: 10c0/35bb110a71086c48906aa7cd3ed4913fb913823715359d65e32e0b964cb1e255593b0ae8014a5005c66a68e6fa66c38dcfa8056dbbdfb8b0187c0ffe7ee3a58f
   languageName: node
   linkType: hard
 
@@ -3719,6 +3737,8 @@ __metadata:
     "@types/node": "npm:^20"
     "@types/react": "npm:^19.1.2"
     "@types/react-dom": "npm:^19.1.2"
+    git-format-staged: "npm:^3.1.1"
+    husky: "npm:^9.1.7"
     isbot: "npm:^5.1.27"
     react: "npm:^19.1.0"
     react-dom: "npm:^19.1.0"

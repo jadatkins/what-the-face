@@ -1,0 +1,1 @@
+npx git-format-staged --formatter 'yarn biome check --write --no-errors-on-unmatched --stdin-file-path="{}"' '*.js' '*.jsx' '*.ts' '*.tsx' '*.json' '*.jsonc' '*.css' '*.vue' '*.svelte' '*.astro' '*.graphql' '*.gql'
