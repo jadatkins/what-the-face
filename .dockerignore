@@ -1,4 +1,15 @@
 .react-router
 build
 node_modules
+.yarn/cache
+.yarn/unplugged
+.pnp.*
+dist
+.env
+.git
+.gitignore
+Dockerfile
+docker-compose.yml
 README.md
+doc/
+*.md
