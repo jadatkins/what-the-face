@@ -1,5 +1,12 @@
+import { useLoaderData } from "react-router";
 import { Welcome } from "../welcome/welcome";
 import type { Route } from "./+types/home";
+
+export function loader() {
+  return {
+    testSecret: process.env.TEST_SECRET,
+  };
+}
 
 export function meta(_args: Route.MetaArgs) {
   return [
@@ -9,5 +16,6 @@ export function meta(_args: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <Welcome />;
+  const { testSecret } = useLoaderData<typeof loader>();
+  return <Welcome testSecret={testSecret} />;
 }

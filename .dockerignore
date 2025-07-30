@@ -6,6 +6,7 @@ node_modules
 .pnp.*
 dist
 .env
+.env.keys
 .git
 .gitignore
 Dockerfile

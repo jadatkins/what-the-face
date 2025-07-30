@@ -4,8 +4,8 @@
   "type": "module",
   "scripts": {
     "build": "react-router build",
-    "dev": "react-router dev",
-    "start": "react-router-serve ./build/server/index.js",
+    "dev": "dotenvx run -- react-router dev",
+    "start": "dotenvx run -- react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc",
     "lint": "biome check .",
     "lint:fix": "biome check --write .",
@@ -13,6 +13,7 @@
     "postinstall": "husky"
   },
   "dependencies": {
+    "@dotenvx/dotenvx": "^1.48.4",
     "@react-router/node": "^7.5.3",
     "@react-router/serve": "^7.5.3",
     "class-variance-authority": "^0.7.1",

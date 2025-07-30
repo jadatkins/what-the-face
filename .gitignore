@@ -13,3 +13,7 @@
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# Secrets
+.env
+.env.keys
