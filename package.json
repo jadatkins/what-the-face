@@ -12,7 +12,8 @@
     "lint": "biome lint --write .",
     "lint:check": "biome lint .",
     "check": "biome check --write .",
-    "check:ci": "biome ci ."
+    "check:ci": "biome ci .",
+    "prepare": "husky"
   },
   "dependencies": {
     "@react-router/node": "8.0.0",
@@ -29,6 +30,8 @@
     "@types/node": "^22",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
+    "git-format-staged": "^4.0.1",
+    "husky": "^9.1.7",
     "tailwindcss": "^4.2.2",
     "typescript": "^5.9.3",
     "vite": "^8.0.3"
