@@ -1,6 +1,6 @@
 # 2. Meta-Framework
 
-Date: 2025-06-07
+Date: 2025-06-07 (amended 2026-06-21)
 
 ## Status
 
@@ -12,21 +12,22 @@ Having chosen React as our frontend framework, we need a full-stack framework th
 
 ## Decision
 
-We will use **React Router v7 in framework mode** with **Vite** as the build tool.
+We will use **React Router v8 in framework mode** with **Vite** as the build tool.
 
 ### Alternatives Considered
 
-- **Remix** - Initially preferred but the Remix team now recommends starting new projects with React Router v7
+- **Remix** - Less standard than React Router; the Remix team was recommending to use React Router v7 instead for a while
 - **Next.js** - Rejected as it's more complex and opinionated than needed for this project
 - **Redwood.js** - Rejected as it's less established and has a steeper learning curve
 - **Blitz.js** - Rejected as it's less mainstream and has uncertain long-term support
 - **Astro** - Rejected as it's more suited for static/content sites rather than full-stack applications
+- **React Router v7** - Superseded by v8
 
 ### Notes
 
 Originally considered Remix, but followed the Remix team's official recommendation: "We now recommend starting all new projects with React Router v7." This represents the natural evolution of Remix's approach.
 
-Vite is used as the build tool to access React Router v7's full framework features including SSR, automatic code-splitting, route modules with loaders and actions, and optimized development experience.
+Vite is used as the build tool to access React Router's full framework features including SSR, automatic code-splitting, route modules with loaders and actions, and optimized development experience.
 
 ## Consequences
 
@@ -43,5 +44,6 @@ Vite is used as the build tool to access React Router v7's full framework featur
 - Fewer built-in optimizations and conventions
 
 **Risks:**
-- React Router v7 is relatively new, though it builds on mature React Router foundations
+- React Router v8 requires recent tool versions which may limit some third-party package compatibility
 - Smaller community compared to Next.js for troubleshooting
+- ESM-only may require adjustments for packages that don't support ESM
