@@ -1,6 +1,6 @@
 # 3. Hosting Provider and Deployment Architecture
 
-Date: 2025-06-15
+Date: 2025-06-15 (amended 2026-06-21)
 
 ## Status
 
@@ -8,64 +8,76 @@ Accepted
 
 ## Context
 
-We need to select both a deployment architecture and hosting provider for our React / TypeScript application. The solution should align with our project priorities of minimizing development effort while providing learning opportunities. For data protection and other political reasons, I prefer European ownership of the hosting provider, and it needs to be cost-effective for a hobby project.
+We need to select both a deployment architecture and hosting provider for our React / TypeScript application. The solution should align with our project priorities of minimizing development effort while providing learning opportunities. For data protection and privacy, I prefer hosting providers and infrastructure that are politically safe and have strong data privacy protections. The solution needs to be cost-effective for a hobby project.
 
-Two primary deployment architectures are available:
-1. **Serverless platforms** (optimized for React frameworks)
-2. **Docker containers** (providing dev/prod environment parity)
+Two primary deployment approaches are available:
+1. **Platform as a Service with buildpacks** (zero-config deployment from Git)
+2. **Docker containers** (explicit control over build and runtime environment)
 
 ## Decision
 
 We will use:
-- **Docker containers** as our architecture
-- **Koyeb** as our hosting provider
+- **Buildpacks** as our primary deployment method (with Docker as a fallback option)
+- **Render** as our hosting provider
 
-Koyeb's company HQ is in Paris (France) but we will use their Frankfurt (Germany) region.
+Render is a Canadian company, and we will use their EU (Frankfurt) region for data hosting.
 
 ### Deployment Architecture Decision
 
-**Docker containers** were chosen over serverless functions for:
-- Perfect development/production environment parity for easier debugging
-- Provider portability and reduced vendor lock-in
-- Educational value in learning containerization skills
-- Compatibility with European hosting providers
+**Buildpacks** were chosen as the primary deployment method for:
+- Zero-configuration deployment from Git repositories
+- Automatic detection of Node.js, TypeScript, and pnpm
+- Simpler developer experience with less boilerplate
+- Still runs in isolated containers under the hood
+- Docker remains available as a fallback for advanced use cases
 
-### Hosting Provider Alternatives Considered for Docker Containers
+### Hosting Provider Decision
 
-- **Render** - Rejected due to Canadian ownership, though offers superior developer experience
-- **Railway** - Rejected due to US ownership, more complex setup, and higher baseline costs
-- **Scaleway** - Rejected despite French ownership due to complex GitHub Actions + Container Registry setup requirements
-- **Fly.io** - Rejected due to Canadian ownership and additional complexity requiring flyctl and manual GitHub Actions configuration
+**Render** was chosen for:
+- **Superior developer experience**: Automatic deployments, preview environments for PRs, excellent documentation
+- **Cost-effectiveness**: Generous free tier (web services that sleep after inactivity), then affordable paid plans starting at $7/month
+- **Data privacy**: Canadian ownership with strong privacy protections, plus EU hosting option (Frankfurt region)
+- **Simplicity**: Single platform for both application hosting and database (see ADR-0005)
+- **Modern features**: Native buildpack support, preview environments, zero-downtime deploys
 
-### Hosting Providers Considered for Serverless Platforms
+### Hosting Provider Alternatives Considered
 
-- **Vercel**
-- **Netlify**
-
-Both offer excellent React framework support but don't align with our Docker container decision or geographic preferences.
+- **Koyeb** - Initially chosen but later rejected due to acquisition by Mistral AI and loss of free tier (minimum $29/month)
+- **Northflank** - UK-based with good free tier, but rejected due to:
+  - Northflank Cloud runs on Google Cloud Platform (US-owned infrastructure)
+  - Website and documentation suggested steeper learning curve than Render
+- **Railway** - Rejected due to US ownership
+- **Scaleway** - French company but rejected due to complex setup requirements and no PaaS features
+- **Hetzner** - German company but rejected as it's VPS-focused, not a PaaS platform
+- **Fly.io** - Rejected due to Canadian ownership without EU hosting options and Docker-only deployment
 
 ### Key Factors
 
-- Serverless container scaling with pay-per-use pricing
-- Developer experience and setup complexity
-- Geographic preference for European providers
-- Learning opportunities for best practices
+1. **Data privacy and political safety**: UK/EU/Canada acceptable; US-owned infrastructure avoided where possible
+2. **Cost-effectiveness**: Free tier for development, affordable for hobby project in production
+3. **Developer experience**: Minimal configuration, automatic deployments, preview environments
+4. **Simplicity**: Single provider for both compute and database reduces complexity
+5. **Geographic data location**: EU region available (Frankfurt)
 
 ## Consequences
 
 **What becomes easier:**
-- Perfect development/production environment consistency
-- Learning transferable Docker skills
-- Provider portability
-- European data sovereignty and provider ownership
+- Extremely fast setup - push to Git and deploy automatically
+- Preview environments for every pull request
+- No Dockerfile to maintain for simple Node.js applications
+- Single platform reduces account management overhead
+- Generous free tier enables cost-free development
 
 **What becomes more difficult:**
-- Container layers complicate local debugging and development workflow
-- Less React-specific optimization of static assets compared to Vercel or Netlify
+- Less explicit control over build environment compared to Docker
+- Canadian ownership means slightly weaker data privacy laws than EU (though still strong)
+- Vendor-specific deployment configuration (though Render supports Docker as escape hatch)
 
 **Risks:**
-- Dependency on Koyeb's platform stability and pricing
+- Dependency on Render's platform stability and pricing
+- Less control over infrastructure compared to European providers like Scaleway or Hetzner
+- Future pricing changes could impact viability for hobby project
 
 ### Notes
 
-Koyeb is hosted on bare metal from several different providers and designed so that the bare metal providers have no access to data. This gives them redundancy and independence from any one provider.
+While Render is Canadian-owned rather than European, Canada has strong data privacy protections and is considered politically safe. The combination of Canadian ownership with EU data hosting (Frankfurt region) provides an acceptable balance of privacy, cost, and developer experience for a UK-based hobby project with primarily UK/EU users.
