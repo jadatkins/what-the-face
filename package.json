@@ -13,6 +13,8 @@
     "lint:check": "biome lint .",
     "check": "biome check --write .",
     "check:ci": "biome ci .",
+    "test:e2e": "playwright test",
+    "test:e2e:gui": "playwright test --ui",
     "prepare": "husky"
   },
   "dependencies": {
@@ -28,6 +30,7 @@
     "@commitlint/cli": "^21.0.2",
     "@commitlint/config-conventional": "^21.0.2",
     "@commitlint/types": "^21.0.1",
+    "@playwright/test": "1.61.0",
     "@react-router/dev": "8.0.0",
     "@tailwindcss/vite": "^4.2.2",
     "@types/node": "^22",
