@@ -2,6 +2,11 @@
   "name": "what-the-face",
   "private": true,
   "type": "module",
+  "packageManager": "pnpm@11.8.0",
+  "engines": {
+    "node": ">=24 <25",
+    "pnpm": ">=11 <12"
+  },
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",
@@ -13,6 +18,7 @@
     "lint:check": "biome lint .",
     "check": "biome check --write .",
     "check:ci": "biome ci .",
+    "check:versions": "node scripts/check-version-sync.mjs",
     "test:e2e": "playwright test",
     "test:e2e:gui": "playwright test --ui",
     "prepare": "husky"
