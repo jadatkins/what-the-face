@@ -58,20 +58,8 @@ pnpm run test:e2e
 pnpm run test:e2e:gui
 ```
 
-## Deployment
+## Production
 
-This application is designed to be deployed to [Render](https://render.com/) using buildpacks.
+This application is deployed to Render at https://what-the-face.onrender.com
 
-The built application output structure:
-
-```
-├── package.json
-├── pnpm-lock.yaml
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
----
-
-Built with ❤️ using React Router.
+See [Deploying on Render](https://render.com/docs/deploys).
