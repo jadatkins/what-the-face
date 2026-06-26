@@ -1,6 +1,6 @@
 # 7. Testing and CI/CD Strategy
 
-Date: 2025-06-18 (amended 2025-06-20)
+Date: 2025-06-18 (amended 2025-06-26)
 
 ## Status
 
@@ -15,8 +15,12 @@ As a single-developer hobby project focused on learning TypeScript and modern we
 We will implement the following development toolchain:
 
 ### Testing
-- **Vitest** + **React Testing Library** for unit and component testing
-- **Playwright** for potential future E2E testing (when needed)
+
+We organise tests into three tiers, chosen by what is under test (and therefore which environment it needs):
+
+1. **Backend logic** — pure server-side units (utilities, `.server` modules, and similar). Vitest in its `node` environment.
+2. **Components and component logic** — shared custom components and their hooks. Vitest in a DOM environment (default **happy-dom**, with **jsdom** as a per-file override when stricter spec compliance is needed) with **React Testing Library**.
+3. **Pages and flows** — whole pages and user journeys end-to-end, including React Router loaders and actions exercised through real navigation. **Playwright**.
 
 ### Code Quality
 - **Biome** for both linting and formatting
