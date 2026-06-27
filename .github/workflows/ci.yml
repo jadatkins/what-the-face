@@ -76,7 +76,7 @@ jobs:
           path: ~/.cache/ms-playwright
           key: playwright-${{ hashFiles('pnpm-lock.yaml') }}-${{ runner.os }}
       - run: pnpm exec playwright install --with-deps
-      - run: pnpm run test:e2e
+      - run: pnpm run test:e2e --reporter=html
       - name: Upload Playwright report
         uses: actions/upload-artifact@v7
         if: always()
