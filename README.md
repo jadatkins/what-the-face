@@ -58,6 +58,9 @@ pnpm run test:e2e
 pnpm run test:e2e:gui
 ```
 
+If a test fails in CI, see https://playwright.dev/docs/ci-intro#html-report
+for how to view a trace of what happened (with a simulated video).
+
 ## Production
 
 This application is deployed to Render at https://what-the-face.onrender.com
