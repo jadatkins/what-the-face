@@ -1,0 +1,49 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    assignees:
+      - "jadatkins"
+    cooldown:
+      semver-major-days: 40
+      semver-minor-days: 7
+      semver-patch-days: 3
+    groups:
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
+      react-router:
+        patterns:
+          - "react-router"
+          - "@react-router/*"
+      tailwind:
+        patterns:
+          - "tailwindcss"
+          - "@tailwindcss/*"
+      dev-dependencies:
+        dependency-type: "development"
+        exclude-patterns:
+          - "@biomejs/biome"
+          - "vite"
+          - "typescript"
+          - "@playwright/test"
+          - "@types/react"
+          - "@types/react-dom"
+          - "@react-router/*"
+          - "tailwindcss"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    assignees:
+      - "jadatkins"
+    groups:
+      actions:
+        patterns:
+          - "*"
