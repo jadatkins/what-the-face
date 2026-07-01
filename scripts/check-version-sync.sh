@@ -6,26 +6,43 @@
 
 set -euo pipefail
 
-nvmrc=$(cat .nvmrc)
-node_version=$(cat .node-version)
-tool_node=$(awk '$1 == "nodejs" { print $2 }' .tool-versions)
-tool_pnpm=$(awk '$1 == "pnpm" { print $2 }' .tool-versions)
-pkg_pnpm_raw=$(jq -r '.packageManager' package.json)
-pkg_pnpm="${pkg_pnpm_raw#pnpm@}"
+print_mismatch_error() {
+  local group="$1"
+  shift
 
-if [[ "$nvmrc" != "$node_version" || "$nvmrc" != "$tool_node" ]]; then
-  echo "Error: Node.js versions are out of sync!" >&2
-  echo "  .nvmrc: $nvmrc" >&2
-  echo "  .node-version: $node_version" >&2
-  echo "  .tool-versions: $tool_node" >&2
-  exit 1
-fi
+  echo "Error: $group versions are out of sync!" >&2
+  local entry
+  for entry in "$@"; do
+    echo "  ${entry%%:*}: ${entry#*:}" >&2
+  done
+}
 
-if [[ "$tool_pnpm" != "$pkg_pnpm" ]]; then
-  echo "Error: pnpm versions are out of sync!" >&2
-  echo "  .tool-versions: $tool_pnpm" >&2
-  echo "  package.json (packageManager): $pkg_pnpm" >&2
-  exit 1
-fi
+check_all_equal() {
+  local group="$1"
+  shift
+
+  local reference="${1#*:}"
+  local entry
+  for entry in "$@"; do
+    if [[ "${entry#*:}" != "$reference" ]]; then
+      print_mismatch_error "$group" "$@"
+      exit 1
+    fi
+  done
+}
+
+node_versions=(
+  ".nvmrc:$(<.nvmrc)"
+  ".node-version:$(<.node-version)"
+  ".tool-versions:$(awk '$1 == "nodejs" { print $2 }' .tool-versions)"
+)
+
+pnpm_versions=(
+  ".tool-versions:$(awk '$1 == "pnpm" { print $2 }' .tool-versions)"
+  "package.json (packageManager):$(jq -r '.packageManager | ltrimstr("pnpm@")' package.json)"
+)
+
+check_all_equal "Node.js" "${node_versions[@]}"
+check_all_equal "pnpm" "${pnpm_versions[@]}"
 
 echo "All versions are in sync."
