@@ -25,7 +25,7 @@ This project requires Node.js 24 and pnpm 11. Version files are provided for mul
    With nvm/fnm (Node only, then install pnpm):
    ```sh
    nvm install  # or: fnm install
-   npm install -g pnpm@11.8.0
+   npm install -g pnpm
    ```
 
 2. **Install dependencies:**
