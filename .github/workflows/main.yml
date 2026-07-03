@@ -1,4 +1,4 @@
-name: CI
+name: Main Workflow
 
 on:
   pull_request:
@@ -71,6 +71,8 @@ jobs:
           key: playwright-${{ hashFiles('pnpm-lock.yaml') }}-${{ runner.os }}
       - run: pnpm exec playwright install --with-deps
       - run: pnpm run test:e2e --reporter=github,html
+        env:
+          DOTENV_PRIVATE_KEY_CI: ${{ secrets.DOTENV_PRIVATE_KEY_CI }}
       - name: Upload Playwright report
         uses: actions/upload-artifact@v7
         if: ${{ !cancelled() }}

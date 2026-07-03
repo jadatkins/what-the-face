@@ -2,7 +2,7 @@
   "name": "what-the-face",
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@11.8.0",
+  "packageManager": "pnpm@11.9.0",
   "engines": {
     "node": ">=24 <25",
     "pnpm": ">=11 <12"
@@ -24,6 +24,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@dotenvx/dotenvx": "^2.0.0",
     "@fontsource-variable/inter": "^5.2.8",
     "@phosphor-icons/react": "^2.1.10",
     "@react-router/node": "8.0.1",

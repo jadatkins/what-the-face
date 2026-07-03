@@ -2,49 +2,15 @@
 
 A full-stack React application built with React Router v8, TypeScript, and Tailwind CSS.
 
+This is a new project with no functionality as of yet.
+
 ## Getting Started
 
-### Prerequisites
+See [Local Dev Setup](doc/local-dev-setup.md) for prerequisites, setup steps, and running the development server.
 
-This project requires Node.js 24 and pnpm 11. Version files are provided for multiple version managers:
-- `.nvmrc` (nvm, fnm)
-- `.node-version` (nodenv, fnm, mise)
-- `.tool-versions` (asdf, mise)
+## Environment Variables
 
-**Recommended**: Install [mise](https://mise.jdx.dev/) if you don't already have a Node.js version manager.
-
-### Setup
-
-1. **Install Node.js and pnpm:**
-
-   With mise or asdf (installs both automatically):
-   ```sh
-   mise install  # or: asdf install
-   ```
-
-   With nvm/fnm (Node only, then install pnpm):
-   ```sh
-   nvm install  # or: fnm install
-   npm install -g pnpm@11.8.0
-   ```
-
-2. **Install dependencies:**
-
-   ```sh
-   pnpm install
-   ```
-
-   This also sets up git hooks via Husky, for automatic formatting and linting with Biome.
-
-### Development
-
-Start the development server with HMR:
-
-```sh
-pnpm run dev
-```
-
-Your application will be available at `http://localhost:5173`.
+See [Environment Variables](doc/environment-variables.md) for how to manage environment variables using dotenvx.
 
 ## Testing
 
