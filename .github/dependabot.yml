@@ -36,6 +36,7 @@ updates:
           - "@types/react-dom"
           - "@react-router/*"
           - "tailwindcss"
+          - "@tailwindcss/*"
 
   - package-ecosystem: "github-actions"
     directory: "/"
