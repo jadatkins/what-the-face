@@ -1,7 +1,10 @@
+import dotenvx from "@dotenvx/dotenvx";
 import logoDark from "./logo-dark.svg";
 import logoLight from "./logo-light.svg";
 
 export function Welcome() {
+  const foo = dotenvx.get("FOO");
+
   return (
     <main className="flex items-center justify-center pt-16 pb-4">
       <div className="flex-1 flex flex-col items-center gap-16 min-h-0">
@@ -31,6 +34,9 @@ export function Welcome() {
                 </li>
               ))}
             </ul>
+            <p>
+              FOO: <span data-testid="dotenvx-test-value">{foo}</span>
+            </p>
           </nav>
         </div>
       </div>
