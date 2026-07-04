@@ -1,0 +1,23 @@
+name: Auto Merge Dependabot
+
+on:
+  pull_request_target:
+    branches: [main]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  auto-merge:
+    if: ${{ github.actor == 'dependabot[bot]' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch Dependabot metadata
+        id: dependabot-metadata
+        uses: dependabot/fetch-metadata@v3
+      - uses: fastify/github-action-merge-dependabot@v3
+        if: ${{ steps.dependabot-metadata.outputs.maintainer-changes == 'false' }}
+        with:
+          target: minor
+          merge-method: squash
+          use-github-auto-merge: true
