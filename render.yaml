@@ -17,8 +17,8 @@ projects:
       region: frankfurt
       buildCommand: pnpm install --frozen-lockfile; pnpm run build
       startCommand: >-
-        if [ "$IS_PULL_REQUEST" = 'true' ]; then unset DOTENV_PRIVATE_KEY_PRODUCTION;
-        else unset DOTENV_PRIVATE_KEY_PREVIEW; fi; pnpm run start
+        if [ "$IS_PULL_REQUEST" = 'true' ]; then DOTENV_PRIVATE_KEY_PRODUCTION='' pnpm run start
+        else DOTENV_PRIVATE_KEY_PREVIEW='' pnpm run start
       autoDeployTrigger: checksPass
       previews:
         generation: manual
