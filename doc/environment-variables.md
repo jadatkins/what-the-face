@@ -12,6 +12,9 @@ pnpm exec dotenvx set FOO 'this is a secret'
 # Encrypt a variable for another environment (does not require the private key)
 pnpm exec dotenvx set BAR 'production eyes only' -f .env.production
 
+# Encrypt a variable for the preview environment
+pnpm exec dotenvx set BAR 'preview value' -f .env.preview
+
 # Set an plain-text value (for non-secrets)
 pnpm exec dotenvx set BAZ 'public knowledge' --plain
 

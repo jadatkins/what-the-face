@@ -12,9 +12,13 @@ projects:
       envVars:
       - key: DOTENV_PRIVATE_KEY_PRODUCTION
         sync: false
+      - key: DOTENV_PRIVATE_KEY_PREVIEW
+        sync: false
       region: frankfurt
       buildCommand: pnpm install --frozen-lockfile; pnpm run build
-      startCommand: pnpm run start
+      startCommand: >-
+        if [ "$IS_PULL_REQUEST" = 'true' ]; then unset DOTENV_PRIVATE_KEY_PRODUCTION;
+        else unset DOTENV_PRIVATE_KEY_PREVIEW; fi; pnpm run start
       autoDeployTrigger: checksPass
       previews:
         generation: manual
