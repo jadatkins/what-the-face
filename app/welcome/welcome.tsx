@@ -4,6 +4,7 @@ import logoLight from "./logo-light.svg";
 
 export function Welcome() {
   const foo = dotenvx.get("FOO");
+  const pull_request = process.env.IS_PULL_REQUEST;
 
   return (
     <main className="flex items-center justify-center pt-16 pb-4">
@@ -36,6 +37,14 @@ export function Welcome() {
             </ul>
             <p>
               FOO: <span data-testid="dotenvx-test-value">{foo}</span>
+              <br />
+              IS_PULL_REQUEST: {pull_request}
+              <br />
+              production: {typeof process.env.DOTENV_PRIVATE_KEY_PRODUCTION}:
+              {(process.env.DOTENV_PRIVATE_KEY_PRODUCTION || "").length}
+              <br />
+              preview: {typeof process.env.DOTENV_PRIVATE_KEY_PREVIEW}:
+              {(process.env.DOTENV_PRIVATE_KEY_PREVIEW || "").length}
             </p>
           </nav>
         </div>
