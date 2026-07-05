@@ -1,0 +1,20 @@
+version: "1"
+projects:
+- name: What the Face
+  environments:
+  - name: Production
+    services:
+    - type: web
+      name: what-the-face
+      runtime: node
+      repo: https://github.com/jadatkins/what-the-face
+      plan: free
+      envVars:
+      - key: DOTENV_PRIVATE_KEY_PRODUCTION
+        sync: false
+      region: frankfurt
+      buildCommand: pnpm install --frozen-lockfile; pnpm run build
+      startCommand: pnpm run start
+      autoDeployTrigger: checksPass
+      previews:
+        generation: manual
