@@ -8,6 +8,10 @@ export function meta(_args: Route.MetaArgs) {
   ];
 }
 
-export default function Home() {
-  return <Welcome />;
+export function loader(_args: Route.LoaderArgs) {
+  return { foo: process.env.FOO };
+}
+
+export default function Home({ loaderData }: Route.ComponentProps) {
+  return <Welcome foo={loaderData.foo} />;
 }
