@@ -19,8 +19,8 @@
     "check": "biome check --write .",
     "check:ci": "biome ci .",
     "check:versions": "bash scripts/check-version-sync.sh",
-    "test:e2e": "playwright test",
-    "test:e2e:gui": "playwright test --ui",
+    "test:e2e": "dotenvx run -- playwright test",
+    "test:e2e:gui": "dotenvx run -- playwright test --ui",
     "prepare": "husky"
   },
   "dependencies": {
@@ -43,9 +43,10 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.2",
-    "@commitlint/cli": "^21.2.0",
-    "@commitlint/config-conventional": "^21.2.0",
-    "@commitlint/types": "^21.2.0",
+    "@clerk/backend": "3.11.0",
+    "@commitlint/cli": "^21.1.0",
+    "@commitlint/config-conventional": "^21.1.0",
+    "@commitlint/types": "^21.1.0",
     "@playwright/test": "1.61.1",
     "@react-router/dev": "8.1.0",
     "@tailwindcss/vite": "^4.3.2",

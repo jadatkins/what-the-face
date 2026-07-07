@@ -60,6 +60,9 @@ importers:
       '@biomejs/biome':
         specifier: 2.5.2
         version: 2.5.2
+      '@clerk/backend':
+        specifier: 3.11.0
+        version: 3.11.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@commitlint/cli':
         specifier: ^21.1.0
         version: 21.1.0(@types/node@25.9.4)(conventional-commits-parser@6.4.0)(typescript@6.0.3)
