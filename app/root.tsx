@@ -7,7 +7,6 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  useLoaderData,
 } from "react-router";
 
 import type { Route } from "./+types/root";
@@ -15,7 +14,7 @@ import "./app.css";
 
 export const middleware = [clerkMiddleware()];
 
-export const loader = (args: Parameters<typeof rootAuthLoader>[0]) => rootAuthLoader(args);
+export const loader = (args: Route.LoaderArgs) => rootAuthLoader(args);
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -48,8 +47,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default function App() {
-  const loaderData = useLoaderData<typeof loader>();
+export default function App({ loaderData }: Route.ComponentProps) {
   return (
     <ClerkProvider loaderData={loaderData}>
       <Outlet />
