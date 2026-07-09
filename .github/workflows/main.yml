@@ -17,7 +17,7 @@ jobs:
           node-version-file: .tool-versions
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm run check:ci
+      - run: pnpm exec biome ci .
 
   typecheck:
     name: Type Check

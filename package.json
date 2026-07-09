@@ -13,14 +13,9 @@
     "start": "dotenvx run -- react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc",
     "format": "biome format --write .",
-    "format:check": "biome format .",
     "lint": "biome lint --write .",
-    "lint:check": "biome lint .",
     "check": "biome check --write .",
-    "check:ci": "biome ci .",
-    "check:versions": "bash scripts/check-version-sync.sh",
     "test:e2e": "dotenvx run -- playwright test",
-    "test:e2e:gui": "dotenvx run -- playwright test --ui",
     "prepare": "husky"
   },
   "dependencies": {
