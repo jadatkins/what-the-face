@@ -14,18 +14,7 @@ See [Environment Variables](doc/environment-variables.md) for how to manage envi
 
 ## Testing
 
-Run end-to-end tests:
-
-```sh
-# Run all tests on all browsers (Chromium, Firefox, WebKit)
-pnpm run test:e2e
-
-# Run tests in UI mode
-pnpm run test:e2e:gui
-```
-
-If a test fails in CI, see https://playwright.dev/docs/ci-intro#html-report
-for how to view a trace of what happened (with a simulated video).
+See [Testing](doc/testing.md) for how to run end-to-end tests.
 
 ## Production
 

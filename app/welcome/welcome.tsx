@@ -1,10 +1,8 @@
-import dotenvx from "@dotenvx/dotenvx";
+import type React from "react";
 import logoDark from "./logo-dark.svg";
 import logoLight from "./logo-light.svg";
 
-export function Welcome() {
-  const foo = dotenvx.get("FOO");
-
+export function Welcome({ foo, children }: { foo?: string; children?: React.ReactNode }) {
   return (
     <main className="flex items-center justify-center pt-16 pb-4">
       <div className="flex-1 flex flex-col items-center gap-16 min-h-0">
@@ -15,6 +13,7 @@ export function Welcome() {
           </div>
         </header>
         <div className="max-w-[300px] w-full space-y-6 px-4">
+          {children && <div className="flex justify-center">{children}</div>}
           <nav className="rounded-3xl border border-gray-200 p-6 dark:border-gray-700 space-y-4">
             <p className="leading-6 text-gray-700 dark:text-gray-200 text-center">
               What&apos;s next?

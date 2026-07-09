@@ -47,6 +47,14 @@ This project requires Node.js 24 and pnpm 11. Version files are provided for mul
    file, and inject `DOTENV_PRIVATE_KEY` as an environment variable only when
    running the dev server.
 
+4. Set Clerk API Key
+
+   Get the development API key from https://dashboard.clerk.com/ and set it:
+
+   ```sh
+   pnpm exec dotenvx set CLERK_SECRET_KEY 'sk_test_******'
+   ```
+
 ## Development
 
 Start the development server with HMR:
