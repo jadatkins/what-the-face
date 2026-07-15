@@ -70,9 +70,10 @@ jobs:
           path: ~/.cache/ms-playwright
           key: playwright-${{ hashFiles('pnpm-lock.yaml') }}-${{ runner.os }}
       - run: pnpm exec playwright install --with-deps
-      - run: pnpm run test:e2e --reporter=github,html --project=Chrome --project=Firefox --project=Android
+      - run: pnpm run test:e2e --reporter=github,html
         env:
           DOTENV_PRIVATE_KEY_CI: ${{ secrets.DOTENV_PRIVATE_KEY_CI }}
+          E2E_BROWSERS: ${{ vars.E2E_BROWSERS_LINUX || 'Chrome' }}
       - name: Upload Playwright report
         uses: actions/upload-artifact@v7
         if: ${{ !cancelled() }}
@@ -84,6 +85,10 @@ jobs:
     name: End-to-end Tests (macOS)
     runs-on: macos-latest
     needs: [lint, typecheck, versions, build]
+    if: >-
+      ${{ vars.E2E_BROWSERS_MACOS == '' ||
+      contains(vars.E2E_BROWSERS_MACOS, 'Safari') ||
+      contains(vars.E2E_BROWSERS_MACOS, 'iPhone') }}
     steps:
       - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v6
@@ -98,9 +103,10 @@ jobs:
           path: ~/Library/Caches/ms-playwright
           key: playwright-${{ hashFiles('pnpm-lock.yaml') }}-${{ runner.os }}
       - run: pnpm exec playwright install --with-deps
-      - run: pnpm run test:e2e --reporter=github,html --project=Safari --project=iPhone
+      - run: pnpm run test:e2e --reporter=github,html
         env:
           DOTENV_PRIVATE_KEY_CI: ${{ secrets.DOTENV_PRIVATE_KEY_CI }}
+          E2E_BROWSERS: ${{ vars.E2E_BROWSERS_MACOS || 'iPhone' }}
       - name: Upload Playwright report
         uses: actions/upload-artifact@v7
         if: ${{ !cancelled() }}

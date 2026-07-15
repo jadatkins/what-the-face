@@ -22,7 +22,7 @@ export default defineConfig({
     reuseExistingServer: !process.env.CI,
   },
 
-  projects: [
+  projects: filterProjects([
     {
       name: "Chrome",
       use: { ...devices["Desktop Chrome"] },
@@ -43,5 +43,22 @@ export default defineConfig({
       name: "iPhone",
       use: { ...devices["iPhone 16"] },
     },
-  ],
+  ]),
 });
+
+/**
+ * Restricts which projects (browsers) run based on the `E2E_BROWSERS`
+ * environment variable, a comma-separated, case-insensitive list of project
+ * names (e.g. "Chrome,Firefox"). When unset or empty, all projects run.
+ */
+function filterProjects<T extends { name: string }>(allProjects: T[]): T[] {
+  const selected = process.env.E2E_BROWSERS?.split(",")
+    .map((name) => name.trim().toLowerCase())
+    .filter(Boolean);
+
+  if (!selected || selected.length === 0) {
+    return allProjects;
+  }
+
+  return allProjects.filter((project) => selected.includes(project.name.toLowerCase()));
+}
