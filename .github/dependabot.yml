@@ -4,8 +4,6 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-    assignees:
-      - "jadatkins"
     cooldown:
       semver-major-days: 40
       semver-minor-days: 7
