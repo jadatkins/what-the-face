@@ -12,8 +12,8 @@ importers:
         specifier: ^3.5.9
         version: 3.5.9(react-dom@19.2.7(react@19.2.7))(react-router@8.1.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react@19.2.7)
       '@dotenvx/dotenvx':
-        specifier: ^2.1.5
-        version: 2.1.5
+        specifier: ^2.2.1
+        version: 2.2.1
       '@fontsource-variable/inter':
         specifier: ^5.2.8
         version: 5.2.8
@@ -414,8 +414,8 @@ packages:
     resolution: {integrity: sha512-/BITOC9dmS/edY2zQwZNicQ059O6RKabtQfyEafV0nGtfYRNHYy1DIPiYVcov40+tob9hfmBnbR963dS+EQ1DQ==}
     hasBin: true
 
-  '@dotenvx/dotenvx@2.1.5':
-    resolution: {integrity: sha512-PdXaPN6pGRWW3ofLDCpNGWZZjFaEjDKQTXKMnlQuVTDsqtNgJHUu/HItvr4wTzoO+y8kVRj1CSX+rrPwmV1FMA==}
+  '@dotenvx/dotenvx@2.2.1':
+    resolution: {integrity: sha512-SK1mI3eKNlYyf1E5ICMw/aA7tZdegisSSgqG2pAAnO2GtAipqy44y978j7NX8eyhny7V71qzZnl/q5d/UMdSLg==}
     hasBin: true
 
   '@dotenvx/primitives@0.8.0':
@@ -2088,8 +2088,8 @@ packages:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
     engines: {node: '>= 4'}
 
-  ignore@7.0.5:
-    resolution: {integrity: sha512-Hs59xBNfUIunMFgWAbGX5cq6893IbWg4KnrjbYwX3tx0ztorVgTDA6B2sxf8ejHJ4wz8BqGUMYlnzNBer5NvGg==}
+  ignore@7.0.6:
+    resolution: {integrity: sha512-BAg6QkE8W+TuQLrrw0Ugr7HegXduRuuj8/ti2kSOc+jz1dmx8/WNcjr6XGnq5YpDWxFwwaavqD0+jIUOKelTsw==}
     engines: {node: '>= 4'}
 
   import-fresh@3.3.1:
@@ -2861,8 +2861,8 @@ packages:
     resolution: {integrity: sha512-eNRKgb3z66Yp3D2CixVujOUvXLFUTij/zVnV8KRyvFdQwpz7I5DS8UfRkTeLzb64u+dkzDSdelE24izu+zSSUg==}
     engines: {node: ^14.18.0 || >=16.0.0}
 
-  systeminformation@5.31.15:
-    resolution: {integrity: sha512-7mqCtD28TK5dVdLAQONVa/Do/NBgMH2dxqf49nh6DIKoEWuDg6tkgGBP+dN22VEJVPZa/QqiHomhWNRn4WUNTQ==}
+  systeminformation@5.31.17:
+    resolution: {integrity: sha512-TvFA9iwDWlMjqZVlKIJ0Cy+Zgm9ttlMx0SMRwJDMNKyhlEKWBMb3+WRwDi/3dvHdWbexpos4Osp4U49p5WjB5g==}
     engines: {node: '>=8.0.0'}
     os: [darwin, linux, win32, freebsd, openbsd, netbsd, sunos, android]
     hasBin: true
@@ -3475,12 +3475,12 @@ snapshots:
       object-treeify: 1.1.33
       open: 8.4.2
       picomatch: 4.0.5
-      systeminformation: 5.31.15
+      systeminformation: 5.31.17
       undici: 7.28.0
       which: 4.0.0
       yocto-spinner: 1.2.1
 
-  '@dotenvx/dotenvx@2.1.5':
+  '@dotenvx/dotenvx@2.2.1':
     dependencies:
       '@dotenvx/primitives': 1.8.1
       commander: 11.1.0
@@ -3490,12 +3490,12 @@ snapshots:
       env-paths: 2.2.1
       execa: 5.1.1
       fdir: 6.5.0(picomatch@4.0.5)
-      ignore: 7.0.5
+      ignore: 7.0.6
       object-treeify: 1.1.33
       open: 8.4.2
       picomatch: 4.0.5
       synckit: 0.11.13
-      systeminformation: 5.31.15
+      systeminformation: 5.31.17
       undici: 7.28.0
       which: 6.0.1
       yocto-spinner: 1.2.1
@@ -5137,7 +5137,7 @@ snapshots:
 
   ignore@5.3.2: {}
 
-  ignore@7.0.5: {}
+  ignore@7.0.6: {}
 
   import-fresh@3.3.1:
     dependencies:
@@ -5883,7 +5883,7 @@ snapshots:
     dependencies:
       '@pkgr/core': 0.3.6
 
-  systeminformation@5.31.15: {}
+  systeminformation@5.31.17: {}
 
   tailwind-merge@3.6.0: {}
 
