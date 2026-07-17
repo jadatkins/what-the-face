@@ -12,8 +12,8 @@ importers:
         specifier: ^3.5.9
         version: 3.5.9(react-dom@19.2.7(react@19.2.7))(react-router@8.2.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react@19.2.7)
       '@dotenvx/dotenvx':
-        specifier: ^2.2.2
-        version: 2.2.2
+        specifier: ^2.4.1
+        version: 2.4.1
       '@fontsource-variable/inter':
         specifier: ^5.2.8
         version: 5.2.8
@@ -414,15 +414,18 @@ packages:
     resolution: {integrity: sha512-/BITOC9dmS/edY2zQwZNicQ059O6RKabtQfyEafV0nGtfYRNHYy1DIPiYVcov40+tob9hfmBnbR963dS+EQ1DQ==}
     hasBin: true
 
-  '@dotenvx/dotenvx@2.2.2':
-    resolution: {integrity: sha512-mOTd4lz85E5Vl+dQ0HuXu++OOujzriHtDbMLLbdRQARct6Psil/R5yS2dSFNlP5lA9mD0GgxdHPxNU4YLK5Pug==}
+  '@dotenvx/dotenvx@2.4.1':
+    resolution: {integrity: sha512-kwt04HYe8SmyYRPW6/nuM8+MSXav+hMEQvI7SRJTKdU0kM57lf/R7NvxvkC53OnWtTERN0v4DOShXn98ev3hfw==}
     hasBin: true
 
   '@dotenvx/primitives@0.8.0':
     resolution: {integrity: sha512-VYJy0uhFm9zTJ1TxBaW/pA8bjbOM/OttaNMwZ1RHG4JKyRG7DhSdiqD1ipQoAyoD22olUtxbP78W9xY3Wd11bg==}
 
-  '@dotenvx/primitives@1.8.1':
-    resolution: {integrity: sha512-xcEkhZDDA9E/ElU27Ft6ZaBBZN4EkXDmD0H4kZB7CcEMfQr43P6RMb7AMU6xYvqLyg2zT8rb0lEuaE8gUlUEiw==}
+  '@dotenvx/primitives@1.10.0':
+    resolution: {integrity: sha512-QhA2HUFiL7FJTUklspNRt2B/hVoBaQGt4tkWuOTI/NMLuohNOG9CR8wVOhVQyJPBIQMK/HhdmUklRjDKzhS7Nw==}
+
+  '@dotenvx/tooling@1.0.2':
+    resolution: {integrity: sha512-yf4VwIZUzSqlLy2pe0kH2xk6dME73oYW5XqcHE7M1zA1H0RX/dSUThsSRmpCjp622iW9f6VGQl5Aa6szt5Xc0w==}
 
   '@emnapi/core@1.11.1':
     resolution: {integrity: sha512-RSvbQmHzdKzNsLYa/wHrbc3KN4sYLKAdPZxqiM2HATqv/SBk2/ENSHpvXGaLOMcsAyz0poEGqkmmKYG3OWiJEQ==}
@@ -510,10 +513,6 @@ packages:
     peerDependencies:
       react: '>= 16.8'
       react-dom: '>= 16.8'
-
-  '@pkgr/core@0.3.6':
-    resolution: {integrity: sha512-SEeaJLb3qBNF/OaXnaR1NmmBbFYk1zC0ZH/52fATcRPLFg/p791YrcyFFy44Bo9sLaGuSuLp5Q6axbb/O+v/RA==}
-    engines: {node: ^14.18.0 || >=16.0.0}
 
   '@playwright/test@1.61.1':
     resolution: {integrity: sha512-8nKv6+0RJSL9FE4jYOEGXnPeM/Hg12qZpmqzZjRh3qM0Y7c3z1mrOTfFLids72RDQYVh9WpLEfR5WdpNX4fkig==}
@@ -2088,10 +2087,6 @@ packages:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
     engines: {node: '>= 4'}
 
-  ignore@7.0.6:
-    resolution: {integrity: sha512-BAg6QkE8W+TuQLrrw0Ugr7HegXduRuuj8/ti2kSOc+jz1dmx8/WNcjr6XGnq5YpDWxFwwaavqD0+jIUOKelTsw==}
-    engines: {node: '>= 4'}
-
   import-fresh@3.3.1:
     resolution: {integrity: sha512-TR3KfrTZTYLPB6jUjfx6MF9WcWrHL9su5TObK4ZkYgBdWKPOFoSoQIdEuTuR82pmtxH2spWG9h6etwfr1pLBqQ==}
     engines: {node: '>=6'}
@@ -2206,10 +2201,6 @@ packages:
   isexe@3.1.5:
     resolution: {integrity: sha512-6B3tLtFqtQS4ekarvLVMZ+X+VlvQekbe4taUkf/rhVO3d/h0M2rfARm/pXLcPEsjjMsFgrFgSrhQIxcSVrBz8w==}
     engines: {node: '>=18'}
-
-  isexe@4.0.0:
-    resolution: {integrity: sha512-FFUtZMpoZ8RqHS3XeXEmHWLA4thH+ZxCv2lOiPIn1Xc7CxrqhWzNSDzD+/chS/zbYezmiwWLdQC09JdQKmthOw==}
-    engines: {node: '>=20'}
 
   jiti@2.6.1:
     resolution: {integrity: sha512-ekilCSN1jwRvIbgeg/57YFh8qQDNbwDb9xT/qu2DAHbFFZUicIl4ygVaAvzveMhMVr3LnpSKTNnwt8PoOfmKhQ==}
@@ -2861,10 +2852,6 @@ packages:
     resolution: {integrity: sha512-aulFJcD6YK8V1G7iRB5tigAP4TsHBZZrOV8pjV++zdUwmeV8uzbY7yn6h9MswN62adStNZFuCIx4haBnRuMDaw==}
     engines: {node: '>=18'}
 
-  synckit@0.11.13:
-    resolution: {integrity: sha512-eNRKgb3z66Yp3D2CixVujOUvXLFUTij/zVnV8KRyvFdQwpz7I5DS8UfRkTeLzb64u+dkzDSdelE24izu+zSSUg==}
-    engines: {node: ^14.18.0 || >=16.0.0}
-
   systeminformation@5.31.17:
     resolution: {integrity: sha512-TvFA9iwDWlMjqZVlKIJ0Cy+Zgm9ttlMx0SMRwJDMNKyhlEKWBMb3+WRwDi/3dvHdWbexpos4Osp4U49p5WjB5g==}
     engines: {node: '>=8.0.0'}
@@ -3039,11 +3026,6 @@ packages:
     engines: {node: ^16.13.0 || >=18.0.0}
     hasBin: true
 
-  which@6.0.1:
-    resolution: {integrity: sha512-oGLe46MIrCRqX7ytPUf66EAYvdeMIZYn3WaocqqKZAxrBpkqHfL/qvTyJ/bTk5+AqHCjXmrv3CEWgy368zhRUg==}
-    engines: {node: ^20.17.0 || >=22.9.0}
-    hasBin: true
-
   wrap-ansi@9.0.2:
     resolution: {integrity: sha512-42AtmgqjV+X1VpdOfyTGOYRi0/zsoLqtXQckTmqTeybT+BDIbM/Guxo7x3pE2vtpr1ok6xRqM9OpBe+Jyoqyww==}
     engines: {node: '>=18'}
@@ -3070,8 +3052,8 @@ packages:
     resolution: {integrity: sha512-4UEqdc2RYGHZc7Doyqkrqiln3p9X2DZVxaGbwhn2pi7MrRagKaOcIKe8L3OxYcbhXLgLFUS3zAYuQjKBQgmuNg==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=23}
 
-  yocto-spinner@1.2.1:
-    resolution: {integrity: sha512-9cbFWLhbiZp+820O4pkHGNncI7+MrUGzBOjw8NMG+ewsY+aG0DdEXnr19Smxao32YOjLZRMdn1UtaxcrXOYOIg==}
+  yocto-spinner@1.2.2:
+    resolution: {integrity: sha512-DODGl1wJjA/s5pnJFKau9lIYHT81lnhob1i3e1TjxZRxEhWRKl74nTbWE6H5KlkViQQTo/Z29YFdxzTZAMY3ng==}
     engines: {node: '>=18.19'}
 
   yoctocolors@2.1.2:
@@ -3482,31 +3464,19 @@ snapshots:
       systeminformation: 5.31.17
       undici: 7.28.0
       which: 4.0.0
-      yocto-spinner: 1.2.1
+      yocto-spinner: 1.2.2
 
-  '@dotenvx/dotenvx@2.2.2':
+  '@dotenvx/dotenvx@2.4.1':
     dependencies:
-      '@dotenvx/primitives': 1.8.1
-      commander: 11.1.0
-      conf: 10.2.0
-      dotenv: 17.4.2
-      enquirer: 2.4.1
-      env-paths: 2.2.1
-      execa: 5.1.1
-      fdir: 6.5.0(picomatch@4.0.5)
-      ignore: 7.0.6
-      object-treeify: 1.1.33
-      open: 8.4.2
-      picomatch: 4.0.5
-      synckit: 0.11.13
-      systeminformation: 5.31.17
-      undici: 7.28.0
-      which: 6.0.1
-      yocto-spinner: 1.2.1
+      '@dotenvx/primitives': 1.10.0
+      '@dotenvx/tooling': 1.0.2
+      yocto-spinner: 1.2.2
 
   '@dotenvx/primitives@0.8.0': {}
 
-  '@dotenvx/primitives@1.8.1': {}
+  '@dotenvx/primitives@1.10.0': {}
+
+  '@dotenvx/tooling@1.0.2': {}
 
   '@emnapi/core@1.11.1':
     dependencies:
@@ -3613,8 +3583,6 @@ snapshots:
     dependencies:
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
-
-  '@pkgr/core@0.3.6': {}
 
   '@playwright/test@1.61.1':
     dependencies:
@@ -5141,8 +5109,6 @@ snapshots:
 
   ignore@5.3.2: {}
 
-  ignore@7.0.6: {}
-
   import-fresh@3.3.1:
     dependencies:
       parent-module: 1.0.1
@@ -5211,8 +5177,6 @@ snapshots:
   isexe@2.0.0: {}
 
   isexe@3.1.5: {}
-
-  isexe@4.0.0: {}
 
   jiti@2.6.1: {}
 
@@ -5885,10 +5849,6 @@ snapshots:
 
   strip-final-newline@4.0.0: {}
 
-  synckit@0.11.13:
-    dependencies:
-      '@pkgr/core': 0.3.6
-
   systeminformation@5.31.17: {}
 
   tailwind-merge@3.6.0: {}
@@ -5996,10 +5956,6 @@ snapshots:
     dependencies:
       isexe: 3.1.5
 
-  which@6.0.1:
-    dependencies:
-      isexe: 4.0.0
-
   wrap-ansi@9.0.2:
     dependencies:
       ansi-styles: 6.2.3
@@ -6028,7 +5984,7 @@ snapshots:
       y18n: 5.0.8
       yargs-parser: 22.0.0
 
-  yocto-spinner@1.2.1:
+  yocto-spinner@1.2.2:
     dependencies:
       yoctocolors: 2.1.2
 
