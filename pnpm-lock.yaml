@@ -12,8 +12,8 @@ importers:
         specifier: ^3.5.12
         version: 3.5.12(react-dom@19.2.7(react@19.2.7))(react-router@8.2.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react@19.2.7)
       '@dotenvx/dotenvx':
-        specifier: ^2.13.0
-        version: 2.13.0
+        specifier: ^2.14.0
+        version: 2.14.0
       '@fontsource-variable/inter':
         specifier: ^5.2.8
         version: 5.2.8
@@ -414,8 +414,8 @@ packages:
     resolution: {integrity: sha512-/BITOC9dmS/edY2zQwZNicQ059O6RKabtQfyEafV0nGtfYRNHYy1DIPiYVcov40+tob9hfmBnbR963dS+EQ1DQ==}
     hasBin: true
 
-  '@dotenvx/dotenvx@2.13.0':
-    resolution: {integrity: sha512-Re5Tgpg8fftt4tMqYOFXqW1SdkQhVsdbUAiDOJ0B/XF7h05qnnnEYLb+ilaUDeN8Us7kC4h7bxDWUlNbkzO0ug==}
+  '@dotenvx/dotenvx@2.14.0':
+    resolution: {integrity: sha512-cNXKhPSSwl5H8udv31bLnBz8SW/R/9Ijbi96rUIovmG62i8B5zcp9IvWY3tAe/i4IPZaROGaJNZIsOD8OuUR2g==}
     hasBin: true
 
   '@dotenvx/primitives@0.8.0':
@@ -3527,7 +3527,7 @@ snapshots:
       which: 4.0.0
       yocto-spinner: 1.2.2
 
-  '@dotenvx/dotenvx@2.13.0':
+  '@dotenvx/dotenvx@2.14.0':
     dependencies:
       '@dotenvx/primitives': 2.1.0
       '@dotenvx/tooling': 1.0.3
