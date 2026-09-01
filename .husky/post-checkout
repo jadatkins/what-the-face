@@ -15,4 +15,4 @@ case "$1" in
     ;;
 esac
 
-bash scripts/sync-deps.sh "$OLD_HEAD" "$2"
+bash scripts/pnpm-install.sh "$OLD_HEAD" "$2"
