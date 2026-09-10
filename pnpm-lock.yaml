@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@clerk/react-router':
-        specifier: ^3.6.19
-        version: 3.6.19(react-dom@19.2.8(react@19.2.8))(react-router@8.3.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8)
+        specifier: ^3.6.21
+        version: 3.6.21(react-dom@19.2.8(react@19.2.8))(react-router@8.3.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8)
       '@dotenvx/dotenvx':
         specifier: ^2.22.0
         version: 2.22.0
@@ -302,8 +302,8 @@ packages:
     resolution: {integrity: sha512-HDBknkYVTMknYsRNHeI0lUE+e4QfOty/LDzWKpbnaaKJUMzHZDUcVo9RQnLdg18XvhaBN7z1OoRiphJ82nimRA==}
     engines: {node: '>=20.9.0'}
 
-  '@clerk/react-router@3.6.19':
-    resolution: {integrity: sha512-FfkO8fMQHHy5d56Unu5EyKxuwQbqPZuE6ymBGwvkT9HHWS6Tww3/ZVaEj9717kw4E6sDXgADHCCthca8U6bm2g==}
+  '@clerk/react-router@3.6.21':
+    resolution: {integrity: sha512-Cp2+OxHNFd2xwt3+b7khyY0PWrNMyHuFnu0tzzXRS1OSkLcv/Hbwyqyrq2KUTLUV141AsPygPSvH57LMafoiZw==}
     engines: {node: '>=20.9.0'}
     peerDependencies:
       react: ^18.0.0 || ~19.0.3 || ~19.1.4 || ~19.2.3 || ~19.3.0-0
@@ -3492,7 +3492,7 @@ snapshots:
       - react
       - react-dom
 
-  '@clerk/react-router@3.6.19(react-dom@19.2.8(react@19.2.8))(react-router@8.3.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8)':
+  '@clerk/react-router@3.6.21(react-dom@19.2.8(react@19.2.8))(react-router@8.3.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8)':
     dependencies:
       '@clerk/backend': 3.17.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@clerk/react': 6.15.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
