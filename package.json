@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.12",
-    "@clerk/backend": "3.16.13",
+    "@clerk/backend": "3.17.0",
     "@commitlint/cli": "^21.2.2",
     "@commitlint/config-conventional": "^21.2.2",
     "@commitlint/types": "^21.2.0",
