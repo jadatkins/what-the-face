@@ -12,8 +12,8 @@ importers:
         specifier: ^3.6.35
         version: 3.6.35(react-dom@19.3.1(react@19.3.1))(react-router@8.4.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)
       '@dotenvx/dotenvx':
-        specifier: ^2.34.2
-        version: 2.34.2
+        specifier: ^2.35.0
+        version: 2.35.0
       '@fontsource-variable/inter':
         specifier: ^5.3.0
         version: 5.3.0
@@ -434,8 +434,8 @@ packages:
     resolution: {integrity: sha512-/BITOC9dmS/edY2zQwZNicQ059O6RKabtQfyEafV0nGtfYRNHYy1DIPiYVcov40+tob9hfmBnbR963dS+EQ1DQ==}
     hasBin: true
 
-  '@dotenvx/dotenvx@2.34.2':
-    resolution: {integrity: sha512-vU83L7W77P4LPpzbkicEraleqEwh6a1mcyRvzZA4D/786mYAQH3yad7be86jx9voAuyWx1QhDcJ8h+Dzzt++ng==}
+  '@dotenvx/dotenvx@2.35.0':
+    resolution: {integrity: sha512-ft8JhR2leFYT8Y5PBcAHmKySq7z+AgRhjrk/rhPu2hMC/pWfiHzKYfbjiRni4nXdPtDZEwW9yR73v3e0+HYJgg==}
     hasBin: true
 
   '@dotenvx/primitives@0.8.0':
@@ -447,8 +447,8 @@ packages:
   '@dotenvx/providers@0.3.11':
     resolution: {integrity: sha512-5H5kAr5ps4shR7ZtA3mtDphh9Fbhp21yY77jCBCJLX2pbdEse0bcCBn7M1Ex1YrKF2O9SLKJB8ttJ2P5JsPidQ==}
 
-  '@dotenvx/tooling@1.0.5':
-    resolution: {integrity: sha512-XMAwZpxIajWaP31zLl2GQS3grIQsRY4B4VMss8fDv70XbGF/9aXSMHc3v9iJNZZVX/i0Loz1MAn6oM8dycbN4A==}
+  '@dotenvx/tooling@1.0.6':
+    resolution: {integrity: sha512-d1AhKqlprzjR7+/7YTYbf9lTjeIUxr2WN+gYL5jf9O25wymlVWzuwOujq9IWJOt33sGWcLjr1eswSOmqm4SRMg==}
 
   '@floating-ui/core@1.8.0':
     resolution: {integrity: sha512-0CIZ5itps/8x7BG8dEIhs53BvCUH2PCoogtakwRTut+Arm58sJooJ0AuZhLw2HJYIR5cMLNPBSS728sPho2khQ==}
@@ -3723,11 +3723,11 @@ snapshots:
       which: 4.0.0
       yocto-spinner: 1.2.2
 
-  '@dotenvx/dotenvx@2.34.2':
+  '@dotenvx/dotenvx@2.35.0':
     dependencies:
       '@dotenvx/primitives': 3.3.1
       '@dotenvx/providers': 0.3.11
-      '@dotenvx/tooling': 1.0.5
+      '@dotenvx/tooling': 1.0.6
       undici: 6.29.1
       write-file-atomic: 5.0.1
       yocto-spinner: 1.2.2
@@ -3739,9 +3739,9 @@ snapshots:
   '@dotenvx/providers@0.3.11':
     dependencies:
       '@dotenvx/primitives': 3.3.1
-      '@dotenvx/tooling': 1.0.5
+      '@dotenvx/tooling': 1.0.6
 
-  '@dotenvx/tooling@1.0.5': {}
+  '@dotenvx/tooling@1.0.6': {}
 
   '@floating-ui/core@1.8.0':
     dependencies:
