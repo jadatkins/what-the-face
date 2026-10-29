@@ -48,8 +48,8 @@ importers:
         specifier: 8.4.0
         version: 8.4.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       shadcn:
-        specifier: ^4.22.0
-        version: 4.22.0
+        specifier: ^4.22.1
+        version: 4.22.1
       tailwind-merge:
         specifier: ^3.7.0
         version: 3.7.0
@@ -1974,8 +1974,8 @@ packages:
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
 
-  electron-to-chromium@1.5.466:
-    resolution: {integrity: sha512-WkgFvScwZjvCPupYGfQr5qlKCv/Tu+GYELGMCGcoBOQbNb6nx/TqGwJyLMwcNAAy2kKJF2agjM7KZKest538JA==}
+  electron-to-chromium@1.5.467:
+    resolution: {integrity: sha512-Nw9X371rtZmYcBSnEijnCDONILjs93biCZO34juC7MBOmK8E+GFnyD4T/WvyrlJkppul7oxg6TwvtKst9SODTw==}
 
   emoji-regex@10.6.0:
     resolution: {integrity: sha512-toUI84YS5YmxW219erniWD0CIVOo46xGKColeNQRgOzDorgBi1v4D71/OFzgD9GO2UGKIv1C3Sp8DAn0+j5w7A==}
@@ -2964,8 +2964,8 @@ packages:
   setprototypeof@1.2.0:
     resolution: {integrity: sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==}
 
-  shadcn@4.22.0:
-    resolution: {integrity: sha512-QKR3XUnatWlgo8IbZqGHrpsxjgdsfpPSAvJvLntQqAxPEf5U2sNsjDYLAS2xmFrOkC9lpj5UpZbrh/BuHrE2CQ==}
+  shadcn@4.22.1:
+    resolution: {integrity: sha512-LbB4Lro+b0qSVki/tgL5edtKylEnXe1ppxMJC12d7NHPgaT+eSgJGMQULwP72V7X9tbiUq7xfx3VDAfB7jdGoA==}
     engines: {node: '>=20.18.1'}
     hasBin: true
 
@@ -3069,8 +3069,8 @@ packages:
     resolution: {integrity: sha512-aulFJcD6YK8V1G7iRB5tigAP4TsHBZZrOV8pjV++zdUwmeV8uzbY7yn6h9MswN62adStNZFuCIx4haBnRuMDaw==}
     engines: {node: '>=18'}
 
-  systeminformation@5.33.16:
-    resolution: {integrity: sha512-R+Lh69IJXfJj6bfyH1In5cIR9FTr4hBS39YvlZHZjsK1p9cuELPq7hplZZIb56ZESMMb+DzdKqqE6Iomi01Mvg==}
+  systeminformation@5.33.18:
+    resolution: {integrity: sha512-SF8DBQx3ypa8zDqZlezpHQ6M2g7TrqSEWpAtC4OsHCdLmi7J2WdxaSbA8/DJyEn2l/CHPrW0VFenoqoDccrw6g==}
     engines: {node: '>=10.0.0'}
     os: [darwin, linux, win32, freebsd, openbsd, netbsd, sunos, android]
     hasBin: true
@@ -3495,7 +3495,7 @@ snapshots:
       '@babel/code-frame': 7.29.7
       '@babel/generator': 7.29.8
       '@babel/helper-globals': 7.29.7
-      '@babel/parser': 7.29.9
+      '@babel/parser': 7.29.11
       '@babel/template': 7.29.7
       '@babel/types': 7.29.8
       debug: 4.4.3
@@ -3724,7 +3724,7 @@ snapshots:
       object-treeify: 1.1.33
       open: 8.4.2
       picomatch: 4.0.7
-      systeminformation: 5.33.16
+      systeminformation: 5.33.18
       undici: 7.30.1
       which: 4.0.0
       yocto-spinner: 1.2.2
@@ -4937,7 +4937,7 @@ snapshots:
   babel-dead-code-elimination@1.0.12:
     dependencies:
       '@babel/core': 7.29.7
-      '@babel/parser': 7.29.9
+      '@babel/parser': 7.29.11
       '@babel/traverse': 7.29.8
       '@babel/types': 7.29.8
     transitivePeerDependencies:
@@ -4991,7 +4991,7 @@ snapshots:
     dependencies:
       baseline-browser-mapping: 2.11.34
       caniuse-lite: 1.0.30001819
-      electron-to-chromium: 1.5.466
+      electron-to-chromium: 1.5.467
       node-releases: 2.0.60
       update-browserslist-db: 1.3.4(browserslist@4.29.5)
 
@@ -5194,7 +5194,7 @@ snapshots:
 
   ee-first@1.1.1: {}
 
-  electron-to-chromium@1.5.466: {}
+  electron-to-chromium@1.5.467: {}
 
   emoji-regex@10.6.0: {}
 
@@ -6149,7 +6149,7 @@ snapshots:
 
   setprototypeof@1.2.0: {}
 
-  shadcn@4.22.0:
+  shadcn@4.22.1:
     dependencies:
       '@babel/core': 7.29.7
       '@babel/parser': 7.29.11
@@ -6286,7 +6286,7 @@ snapshots:
 
   strip-final-newline@4.0.0: {}
 
-  systeminformation@5.33.16: {}
+  systeminformation@5.33.18: {}
 
   tailwind-merge@3.7.0: {}
 
