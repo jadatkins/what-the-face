@@ -44,13 +44,13 @@
     "@commitlint/types": "^21.2.3",
     "@playwright/test": "1.64.1",
     "@react-router/dev": "8.5.1",
-    "@tailwindcss/vite": "^4.3.4",
+    "@tailwindcss/vite": "^4.3.5",
     "@types/node": "^24",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "git-format-staged": "^4.0.2",
     "husky": "^9.1.7",
-    "tailwindcss": "^4.3.4",
+    "tailwindcss": "^4.3.5",
     "typescript": "^7.0.2",
     "vite": "^8.3.6"
   }
