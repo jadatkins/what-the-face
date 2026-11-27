@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@clerk/react-router':
-        specifier: ^3.7.6
-        version: 3.7.6(react-dom@19.3.1(react@19.3.1))(react-router@8.5.2(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)
+        specifier: ^3.7.7
+        version: 3.7.7(react-dom@19.3.1(react@19.3.1))(react-router@8.5.2(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)
       '@dotenvx/dotenvx':
         specifier: ^2.38.2
         version: 2.38.2
@@ -319,8 +319,8 @@ packages:
     resolution: {integrity: sha512-AsLRmaNzBc3qeNY+KKEQWwK5yb+ZLDq1gZmIP/XQob/Q0wPW79c/cNROLwn5Z/TIwg4/ghaniqYgI/CjmA3rdQ==}
     engines: {node: '>=20.9.0'}
 
-  '@clerk/react-router@3.7.6':
-    resolution: {integrity: sha512-Xq/4W+VEu9T3JpSYdqwpE8GtnvOJLyCzeyGca8Zn01CfmLIQD50uH7M0mUKWtBdsAO90xmiWWa9kSsXKopMy/g==}
+  '@clerk/react-router@3.7.7':
+    resolution: {integrity: sha512-NF4Z08fOqtsagCP0a4WFlGxa+BFOoQoZ1nM/o72xX2e0+avvxEzoDJydGw15YeVnsXTqXCQrgxIMrytqCiMlmg==}
     engines: {node: '>=20.9.0'}
     peerDependencies:
       react: ^18.0.0 || ~19.0.3 || ~19.1.4 || ~19.2.3 || ~19.3.0-0
@@ -333,18 +333,6 @@ packages:
     peerDependencies:
       react: ^18.0.0 || ~19.0.3 || ~19.1.4 || ~19.2.3 || ~19.3.0-0
       react-dom: ^18.0.0 || ~19.0.3 || ~19.1.4 || ~19.2.3 || ~19.3.0-0
-
-  '@clerk/shared@4.48.3':
-    resolution: {integrity: sha512-lcwTiQkmmmcN3KjAwEfycFv0+fNyLJQJjhC4T+zr405QyypkTZmvaNkoBQW7QpRdX8UlNW63IoTrIX/vT37EhQ==}
-    engines: {node: '>=20.9.0'}
-    peerDependencies:
-      react: ^18.0.0 || ~19.0.3 || ~19.1.4 || ~19.2.3 || ~19.3.0-0
-      react-dom: ^18.0.0 || ~19.0.3 || ~19.1.4 || ~19.2.3 || ~19.3.0-0
-    peerDependenciesMeta:
-      react:
-        optional: true
-      react-dom:
-        optional: true
 
   '@clerk/shared@4.50.0':
     resolution: {integrity: sha512-SdGGO4/R9HVFN9AOXDdNgt9XzsS0yCpLtcxHSaxkbPC97ORK28UmJOq3R9cK2ScqLAs0Kw8MbFy78mc9vP7oMw==}
@@ -3444,7 +3432,7 @@ snapshots:
       - react
       - react-dom
 
-  '@clerk/react-router@3.7.6(react-dom@19.3.1(react@19.3.1))(react-router@8.5.2(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)':
+  '@clerk/react-router@3.7.7(react-dom@19.3.1(react@19.3.1))(react-router@8.5.2(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react@19.3.1)':
     dependencies:
       '@clerk/backend': 3.33.1(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@clerk/react': 6.19.7(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
@@ -3457,16 +3445,6 @@ snapshots:
   '@clerk/react@6.19.7(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
       '@clerk/shared': 4.50.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      react: 19.3.1
-      react-dom: 19.3.1(react@19.3.1)
-
-  '@clerk/shared@4.48.3(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
-    dependencies:
-      '@tanstack/query-core': 5.108.4
-      dequal: 2.0.3
-      glob-to-regexp: 0.4.1
-      js-cookie: 3.0.8
-    optionalDependencies:
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
 
